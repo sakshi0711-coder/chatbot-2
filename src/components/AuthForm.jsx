@@ -14,7 +14,7 @@ const AuthForm = () => {
     if (result.error) {
       alert(result.error.message || 'Sign in failed');
     } else {
-      alert('Signed in successfully!');
+      alert('Sign in successful!');
        navigate("/messageinput")
       
     }
