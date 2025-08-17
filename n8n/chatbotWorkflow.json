@@ -1,0 +1,36 @@
+{
+  "name": "Chatbot Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "hasura-chatbot",
+        "method": "POST"
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://api.openrouter.ai/v1/chat/completions",
+        "method": "POST",
+        "sendBody": true,
+        "body": {
+          "model": "openai/gpt-3.5-turbo",
+          "messages": [
+            {"role": "user", "content": "={{$json[\"input\"].content}}"}
+          ]
+        }
+    },
+        "headers": {
+          "Authorization": "Bearer 8bbf87ba-bfc0-4e05-98c7-a6d91a7a99f5",
+          "Content-Type": "application/json"
+        },
+      "name": "Call OpenRouter",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [550, 300]
+    }
+  ]
+}
