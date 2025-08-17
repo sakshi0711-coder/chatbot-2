@@ -2,7 +2,7 @@
 import { NhostClient } from '@nhost/react';
 
 const nhost = new NhostClient({
-  subdomain: 'xpffccdhhqrhlmrsphbx',
+  subdomain: 'bjssdemjcgorlviucwcd',
   region: 'ap-south-1',
 });
 
